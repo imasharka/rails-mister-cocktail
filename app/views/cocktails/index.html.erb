@@ -1,14 +1,13 @@
-<% @cocktails.each do |cocktail| %>
-  <div class="col-xs-12 col-sm-4">
-    <%= link_to cocktail_path(cocktail) do %>
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h4><%= cocktail.name %></h4>
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+      <div class="card-product-infos">
+        <%= link_to cocktail_path(cocktail) do %>
+          <h4><%= cocktail.name.upcase %></h4>
           <%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"} %>
         <% end %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 <%= link_to "New cocktail",  new_cocktail_path %>

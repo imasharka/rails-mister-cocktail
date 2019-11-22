@@ -1,7 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to cocktails_path, class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://cdn3.iconfinder.com/data/icons/cat-pattern-colored/94/cat25-512.png" %>
   <% end %>
+  <h1>Cat Tails</h1>
   <%#= render "./shared/searchform" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,10 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Cocktails", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Ingredients", "#", class: "nav-link" %>
+        <%= link_to "Cocktails", cocktails_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://cdn4.iconfinder.com/data/icons/drink-and-cocktails/206/Cosmo-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

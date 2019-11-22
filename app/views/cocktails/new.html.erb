@@ -1,8 +1,15 @@
 <div class="container">
-  <h1>Create a New Cat Tail</h1>
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+  <div class="card p-3 rounded w-50 mx-auto">
+    <h1 class="text-center">Create a Meow Cat Tail</h1>
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div class="text-center">
   <%= link_to "Back to Cocktail List", cocktails_path %>
+</div>
 </div>

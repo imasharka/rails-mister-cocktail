@@ -1,7 +1,11 @@
-<h1>Doses#new</h1>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="card p-3 rounded w-50 mx-auto">
+    <h1 class="text-center">Add a Meow Ingredient</h1>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient %>
+      <%= f.input :description %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 <%= link_to "Back to Cocktail", cocktail_path(params[:cocktail_id]) %>
