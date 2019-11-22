@@ -8,9 +8,10 @@
         <% @cocktail.doses.each do |d| %>
           <ul class="list-group list-group-flush m-3 p-3">
             <li><%= d.ingredient.name %> x <%= d.description %></li>
-            <%= link_to "Delete", dose_path(d),
+            <%= link_to dose_path(d),
       method: :delete,
-      data: { confirm: "Are you sure?" } %>
+      data: { confirm: "Are you sure?" } do %><i class="far fa-trash-alt"></i>
+            <% end %>
           </ul>
         <% end %>
       </div>
