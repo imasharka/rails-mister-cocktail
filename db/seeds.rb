@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Ingredient.destroy_all if Rails.env.development?
+require 'open-uri'
+response = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
+json = JSON.parse(response.read)['drinks']
+json.each do |drink|
+  Ingredient.create!(name: drink['strIngredient1'])
+end

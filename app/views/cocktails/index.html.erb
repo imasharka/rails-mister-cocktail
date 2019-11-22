@@ -1,0 +1,14 @@
+<% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-sm-4">
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h4><%= cocktail.name %></h4>
+          <%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= link_to "New cocktail",  new_cocktail_path %>

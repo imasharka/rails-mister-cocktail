@@ -1,0 +1,13 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <h1><%= @cocktail.name.upcase %></h1>
+</div>
+<% @cocktail.doses.each do |d| %>
+  <ul class="list-group list-group-flush m-3 p-3">
+    <li><%= d.ingredient.name %> x <%= d.description %></li>
+    <%= link_to "Delete", dose_path(d),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  </ul>
+<% end %>
+| <%= link_to "Add New Ingredient", new_cocktail_dose_path(@cocktail) %>
+| <%= link_to "Back to Cocktail List", cocktails_path %>
